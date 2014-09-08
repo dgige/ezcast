@@ -100,10 +100,16 @@ if (!user_logged_in()) {
     else if (isset($input['action']) && $input['click']) {
         refresh_page();
     }
+    else if (isset($input['action']) && $input['action'] == 'internal_login') {
+        view_login_form();
+    }
+    else if (isset($input['action']) && $input['action'] == 'cas_login') {
+        use_cas_login();
+    }
     // Step 1: Displaying the login form
     // (happens if no "action" is provided)
     else {
-        view_login_form();
+        choose_auth();
     }
 }
 
@@ -1655,6 +1661,17 @@ function user_logout() {
     $url = $ezplayer_url;
 
     unset($_SESSION['lang']);
+}
+
+function choose_auth() {
+    require_once template_getpath('choose_auth.php');
+}
+
+function use_cas_login() {
+    global $ezplayer_url;
+    cas_login($ezplayer_url);
+    user_login("cas", "cas");
+    load_page();
 }
 
 ?>

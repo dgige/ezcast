@@ -43,6 +43,17 @@
         <label id="service_description" lang="en">Video player interface</label>
         <label id="ezplayer_page_title" lang="fr">ULB Podcast</label>
         <label id="ezplayer_page_title" lang="en">ULB Podcast</label>
+
+        <label id="ezplayer_welcome_title" lang="fr">Bienvenue</label>
+        <label id="ezplayer_welcome_title" lang="en">Welcome</label>
+
+
+        <label id="ezplayer_login_via_db" lang="fr">Connexion interne</label>
+        <label id="ezplayer_login_via_db" lang="en">Connexion interne</label>
+        <label id="ezplayer_login_via_cas" lang="fr">Connexion CAS</label>
+        <label id="ezplayer_login_via_cas" lang="en">Connexion CAS</label>
+        <label id="ezplayer_login_via_shibboleth" lang="fr">Connexion Shibboleth</label>
+        <label id="ezplayer_login_via_shibboleth" lang="en">Connexion Shibboleth</label>
         
         <!-- Useful keywords -->
         <label id="All" lang="fr">Tout</label>

@@ -1,0 +1,8 @@
+{
+    "cas_server_info":
+    {
+        "URL_CAS"     : "cas.univ.fr",
+       	"URL_PORT"    : 443,
+       	"URL_URI"     : "/"
+    }
+}

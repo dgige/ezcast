@@ -24,6 +24,26 @@
 */
 
 include "config.inc";
+include dirname(__FILE__).'/lib_various.php';
+include_once dirname(__FILE__).'/phpCAS/CAS.php';
+
+
+if (file_exists($cas_server_auth_info_file)) {
+    $cas_server_info = json_to_array($cas_server_auth_info_file);
+
+    # Informations sur le serveur CAS
+    define("URL_CAS" , $cas_server_info[0]["URL_CAS"]);
+    define("URL_PORT", $cas_server_info[0]["URL_PORT"]);
+    define("URL_URI" , $cas_server_info[0]["URL_URI"]);
+
+    # URL du serveur CAS
+    phpCAS::client(CAS_VERSION_2_0, URL_CAS, URL_PORT, URL_URI);
+    # Definition de la langue
+    phpCAS::setLang(PHPCAS_LANG_FRENCH);
+    # Desactive la validation du serveur CAS
+    phpCAS::setNoCasServerValidation();
+}
+
 foreach ($auth_methods as $method) {
     include dirname(__FILE__)."/lib_auth_$method.php";
 }

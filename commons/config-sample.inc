@@ -82,7 +82,9 @@ $mailto_alert = "mail@your.organization"; //who to call in case of problem in th
 
 
 
-$auth_methods = array("file", "ldap");
+$auth_methods = array("file", "ldap", "cas");
+
+$cas_server_auth_info_file = "$basedir/commons/cas_server_auth_info.json";
 
 # JSON FILES FOR LDAP
 /*
